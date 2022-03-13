@@ -3,10 +3,14 @@ from deforestation_main import calculate_square
 
 
 class MyTestCase(unittest.TestCase):
+    input = 2
+    output = 4
+
     def test_correctness(self):
-        input = 2
-        output = 4
-        self.assertEqual(calculate_square(input), output)
+        self.assertEqual(calculate_square(self.input), self.output)
+
+    def test_type(self):
+        self.assertIsInstance(calculate_square(self.input), int)
 
 
 if __name__ == '__main__':
